@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
-import { takeName } from '../src/cli.js';
+import startGame from '../src/index.js';
+import { chooseAGame } from '../src/cli.js';
 
-export const name = takeName();
+const chosenGame = chooseAGame();
+startGame(chosenGame);
