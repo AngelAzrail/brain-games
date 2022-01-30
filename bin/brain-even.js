@@ -2,7 +2,7 @@
 
 import readlineSync from 'readline-sync';
 import { doStep, randomize } from '../src/utils.js';
-import { incorrectAnswer } from '../src/cli.js';
+import { resultOutput } from '../src/cli.js';
 
 console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
@@ -11,15 +11,8 @@ const even = () => {
   console.log(`Question: ${num}`);
   const answer = readlineSync.question('Answer: ');
   const rightAnswer = num % 2 === 0 ? 'yes' : 'no';
-  const result = answer === rightAnswer;
-  console.log(result
-    ? 'Correct!'
-    : incorrectAnswer(answer, rightAnswer));
-  if (result) return true;
-  return false;
+  resultOutput(answer, rightAnswer);
+  return answer === rightAnswer;
 };
 
 doStep(even, 0);
-// if (steps === 3) {
-//   console.log(`Congratulations, ${name}!`);
-// }

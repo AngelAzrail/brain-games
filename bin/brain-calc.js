@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 import readlineSync from 'readline-sync';
-import { takeName } from '../src/cli.js';
-import { randomize } from '../src/utils.js';
+import { resultOutput, takeName } from '../src/cli.js';
+import { doStep, randomize } from '../src/utils.js';
 
 export const operators = ['+', '-', '*', '/'];
 
@@ -24,9 +24,9 @@ export const expression = (op, num1, num2) => {
   }
 };
 
-export const calcGameStart = () => {
-  takeName();
-  console.log('What is the result of the expression?');
+console.log('What is the result of the expression?');
+
+export const calc = () => {
   const operatorId = randomize(0, 3);
   const num1 = randomize(0, 100);
   const num2 = randomize(0, 100);
@@ -34,7 +34,8 @@ export const calcGameStart = () => {
   const rightAnswer = expression(operators[operatorId], num1, num2);
   console.log('Question:', question);
   const answer = readlineSync.question('Answer: ');
-  console.log(answer === rightAnswer.toString() ? 'Correct!' : `Nope ${rightAnswer}`);
+  resultOutput(answer, rightAnswer.toString());
+  return answer === rightAnswer.toString();
 };
 
-calcGameStart();
+doStep(calc, 0);

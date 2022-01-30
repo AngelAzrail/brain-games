@@ -7,5 +7,7 @@ export const takeName = () => {
   console.log(`Hello, ${playerName}!`);
 };
 
-export const incorrectAnswer = (playerAnswer, rightAnswer) => `'${playerAnswer}' is wrong answer ;(. `
-    + `Correct answer was '${rightAnswer}'. \nLet's try again, ${playerName}!`;
+export const resultOutput = (playerAnswer, rightAnswer) => console.log(playerAnswer === rightAnswer
+  ? 'Correct!'
+  : `'${playerAnswer}' is wrong answer ;(. `
+    + `Correct answer was '${rightAnswer}'. \nLet's try again, ${playerName}!`);
