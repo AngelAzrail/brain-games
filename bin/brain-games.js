@@ -2,4 +2,4 @@
 
 import { takeName } from '../src/cli.js';
 
-takeName();
+export const name = takeName();
