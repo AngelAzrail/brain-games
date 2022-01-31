@@ -1,5 +1,5 @@
-import { even } from '../bin/brain-even.js';
-import { calc } from '../bin/brain-calc.js';
+import { even } from '../games/brain-even.js';
+import { calc } from '../games/brain-calc.js';
 
 export const games = {
   'brain-even':
