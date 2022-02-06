@@ -15,7 +15,7 @@ export const games = {
       },
   'brain-gcd':
       {
-        startMessage: 'What is the result of the expression?',
+        startMessage: 'Find the greatest common divisor of given numbers.',
         game: gcd,
       },
 };
