@@ -1,6 +1,7 @@
 import { even } from '../games/brain-even.js';
 import { calc } from '../games/brain-calc.js';
 import { gcd } from '../games/brain-gcd.js';
+import { progression } from '../games/brain-progression.js';
 
 export const games = {
   'brain-even':
@@ -17,5 +18,10 @@ export const games = {
       {
         startMessage: 'Find the greatest common divisor of given numbers.',
         game: gcd,
+      },
+  'brain-progression':
+      {
+        startMessage: 'What number is missing in the progression?',
+        game: progression,
       },
 };
