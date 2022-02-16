@@ -1,5 +1,5 @@
-import { QandA, randomize } from '../src/utils.js';
-import { resultOutput } from '../src/cli.js';
+import { randomize } from '../src/utils.js';
+import { QandA, resultOutput } from '../src/cli.js';
 
 export const mathPrime = (num, acc = 2) => {
   if (num < 2) return false;

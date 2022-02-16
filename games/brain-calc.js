@@ -1,5 +1,5 @@
-import { resultOutput } from '../src/cli.js';
-import { QandA, randomize } from '../src/utils.js';
+import { QandA, resultOutput } from '../src/cli.js';
+import { randomize } from '../src/utils.js';
 
 export const operators = ['+', '-', '*', '/'];
 

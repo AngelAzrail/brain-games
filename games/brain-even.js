@@ -1,5 +1,5 @@
-import { QandA, randomize } from '../src/utils.js';
-import { resultOutput } from '../src/cli.js';
+import { randomize } from '../src/utils.js';
+import { QandA, resultOutput } from '../src/cli.js';
 
 export const even = () => {
   const num = randomize(0, 100);

@@ -1,4 +1,3 @@
-import readlineSync from 'readline-sync';
 import { playerName } from './cli.js';
 
 export const randomize = (min, max) => Math.floor(min + Math.random() * max);
@@ -10,9 +9,4 @@ export const doStep = (gameStep, stepCounter = 0) => {
   } else {
     console.log(`Congratulations, ${playerName}!`);
   }
-};
-
-export const QandA = (question) => {
-  console.log('Question:', question);
-  return readlineSync.question('Answer: ');
 };
