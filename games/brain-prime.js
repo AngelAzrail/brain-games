@@ -9,10 +9,10 @@ export const mathPrime = (num, acc = 2) => {
   return true;
 };
 
-export default () => {
+export const prime = () => {
   const num = randomize(0, 1000);
-  const answer = QandA(num).toString();
+  const answer = QandA(num);
   const rightAnswer = mathPrime(num) ? 'yes' : 'no';
   resultOutput(answer, rightAnswer);
-  return answer === rightAnswer;
+  return answer == rightAnswer;
 };

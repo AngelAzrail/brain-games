@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-cycle
 import { playerName } from './cli.js';
 
 export const randomize = (min, max) => Math.floor(min + Math.random() * max);

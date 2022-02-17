@@ -10,7 +10,7 @@ export const mathProgression = (result, acc, el, diff) => {
   return null;
 };
 
-export default () => {
+export const progression = () => {
   const progLength = randomize(5, 10);
   const diff = randomize(-10, 10);
   const first = randomize(-50, 50);
@@ -21,5 +21,5 @@ export default () => {
   prog[answerIndex] = '..';
   const answer = QandA(prog.join(' '));
   resultOutput(answer, rightAnswer);
-  return answer === rightAnswer;
+  return answer == rightAnswer;
 };

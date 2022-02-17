@@ -5,11 +5,11 @@ export const mathGcd = (first, second, result) => (first % result === 0 && secon
   ? result
   : mathGcd(first, second, result - 1));
 
-export default () => {
+export const gcd = () => {
   const first = randomize(2, 100);
   const second = randomize(2, 100);
-  const rightAnswer = mathGcd(first, second, first > second ? second : first).toString();
-  const answer = QandA(`${first} ${second}`).toString();
+  const rightAnswer = mathGcd(first, second, first > second ? second : first);
+  const answer = QandA(`${first} ${second}`);
   resultOutput(answer, rightAnswer);
-  return answer === rightAnswer;
+  return answer == rightAnswer;
 };
