@@ -15,7 +15,7 @@ export const QandA = (question) => {
   return readlineSync.question('Answer: ');
 };
 
-export const resultOutput = (playerAnswer, rightAnswer) => console.log(playerAnswer == rightAnswer
+export const resultOutput = (playerAnswer, rightAnswer) => console.log(String(playerAnswer) === String(rightAnswer)
   ? 'Correct!'
   : `'${playerAnswer}' is wrong answer ;(. `
     + `Correct answer was '${rightAnswer}'. \nLet's try again, ${playerName}!`);

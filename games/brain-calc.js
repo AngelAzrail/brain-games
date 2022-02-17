@@ -21,13 +21,13 @@ export const expression = (op, num1, num2) => {
   }
 };
 
-export const calc = () => {
+export default () => {
   const operatorId = randomize(0, 3);
   const num1 = randomize(0, 100);
   const num2 = randomize(0, 100);
   const question = `${num1} ${operators[operatorId]} ${num2}`;
   const answer = QandA(question);
-  const rightAnswer = expression(operators[operatorId], num1, num2);
+  const rightAnswer = expression(operators[operatorId], num1, num2).toString();
   resultOutput(answer, rightAnswer);
-  return answer == rightAnswer;
+  return answer === rightAnswer;
 };
