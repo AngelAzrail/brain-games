@@ -18,4 +18,3 @@ export const resultOutput = (playerAnswer, rightAnswer) => console.log(playerAns
   ? 'Correct!'
   : `'${playerAnswer}' is wrong answer ;(. `
     + `Correct answer was '${rightAnswer}'`);
-
