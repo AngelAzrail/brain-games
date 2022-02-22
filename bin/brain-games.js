@@ -1,11 +1,7 @@
 #!/usr/bin/env node
 
-import startGame from '../src/index.js';
-import { chooseAGame } from '../src/cli.js';
-import { games } from '../src/enums.js';
+import readlineSync from 'readline-sync';
 
-// let chosenGame = chooseAGame();
-// if (/\d+/.test(chosenGame)) {
-//   chosenGame = Object.entries(games).map(([name]) => name)[chosenGame - 1];
-// }
-// startGame(chosenGame);
+console.log('Welcome to the Brain Games!');
+const name = readlineSync.question('May I have your name? ');
+console.log(`Hello, ${name}!`);

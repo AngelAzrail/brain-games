@@ -1,14 +1,8 @@
-import { randomize } from '../src/utils.js';
+import { mathProgression, randomize } from '../src/math.js';
 import { QandA, resultOutput } from '../src/cli.js';
+import startGame from '../src/index.js';
 
-export const mathProgression = (result, acc, el, diff) => {
-  if (acc !== 0) {
-    const newEl = el + diff;
-    result.push(newEl);
-    return mathProgression(result, acc - 1, newEl, diff);
-  }
-  return null;
-};
+const gameMessage = 'What number is missing in the progression?';
 
 export const progression = () => {
   const progLength = randomize(5, 10);
@@ -19,7 +13,11 @@ export const progression = () => {
   const answerIndex = randomize(0, progLength - 1);
   const rightAnswer = prog[answerIndex];
   prog[answerIndex] = '..';
-  const answer = QandA(prog.join(' '));
+  const answer = String(QandA(prog.join(' ')));
   resultOutput(answer, rightAnswer);
-  return answer == rightAnswer;
+  return answer === rightAnswer;
+};
+
+export default () => {
+  startGame(gameMessage, progression);
 };

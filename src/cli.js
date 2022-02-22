@@ -1,5 +1,4 @@
 import readlineSync from 'readline-sync';
-import { games } from './enums.js';
 
 export const greetings = () => {
   console.log('Welcome to the Brain Games!');
@@ -15,13 +14,7 @@ export const QandA = (question) => {
   return readlineSync.question('Answer: ');
 };
 
-export const resultOutput = (playerAnswer, rightAnswer) => console.log(playerAnswer == rightAnswer
+export const resultOutput = (playerAnswer, rightAnswer) => console.log(playerAnswer === rightAnswer
   ? 'Correct!'
   : `'${playerAnswer}' is wrong answer ;(. `
-    + `Correct answer was '${rightAnswer}'. \nLet's try again, ${playerName}!`);
-
-export const chooseAGame = () => {
-  console.log('Choose a game: ');
-  Object.keys(games).forEach((name, index) => console.log(index + 1, name));
-  return readlineSync.question('Type the game name and play! ').trim();
-};
+    + `Correct answer was '${rightAnswer}'`);

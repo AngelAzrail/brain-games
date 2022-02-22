@@ -1,9 +1,18 @@
-import { games } from './enums.js';
-import { doStep } from './utils.js';
+import { playerName } from './cli.js';
 
-export default (gameName) => {
-  if (games.hasOwnProperty(gameName)) {
-    console.log(games[gameName].startMessage);
-    doStep(games[gameName].game);
-  } else console.log('Sorry, game not found ;(.');
+export const doStep = (game, stepCounter = 0) => {
+  if (stepCounter < 3) {
+    if (game()) {
+      doStep(game, stepCounter + 1);
+    } else {
+      console.log(`Let's try again, ${playerName}!`);
+    }
+  } else {
+    console.log(`Congratulations, ${playerName}!`);
+  }
+};
+
+export default (gameMessage, game) => {
+  console.log(gameMessage);
+  doStep(game);
 };

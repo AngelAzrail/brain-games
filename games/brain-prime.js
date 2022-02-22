@@ -1,18 +1,17 @@
-import { randomize } from '../src/utils.js';
+import { mathPrime, randomize } from '../src/math.js';
 import { QandA, resultOutput } from '../src/cli.js';
+import startGame from '../src/index.js';
 
-export const mathPrime = (num, acc = 2) => {
-  if (num < 2) return false;
-  if (acc <= num / 2) {
-    return num % acc === 0 ? false : mathPrime(num, acc + 1);
-  }
-  return true;
-};
+const gameMessage = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 export const prime = () => {
   const num = randomize(0, 1000);
-  const answer = QandA(num);
+  const answer = String(QandA(num));
   const rightAnswer = mathPrime(num) ? 'yes' : 'no';
   resultOutput(answer, rightAnswer);
-  return answer == rightAnswer;
+  return answer === rightAnswer;
+};
+
+export default () => {
+  startGame(gameMessage, prime);
 };
