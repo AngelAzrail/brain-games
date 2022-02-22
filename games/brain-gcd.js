@@ -7,8 +7,8 @@ const gameMessage = 'Find the greatest common divisor of given numbers.';
 export const gcd = () => {
   const first = randomize(2, 100);
   const second = randomize(2, 100);
-  const rightAnswer = mathGcd(first, second, first > second ? second : first);
-  const answer = QandA(`${first} ${second}`);
+  const rightAnswer = String(mathGcd(first, second, first > second ? second : first));
+  const answer = String(QandA(`${first} ${second}`));
   resultOutput(answer, rightAnswer);
   return answer === rightAnswer;
 };

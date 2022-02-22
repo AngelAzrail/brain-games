@@ -11,7 +11,7 @@ export const progression = () => {
   const prog = [];
   mathProgression(prog, progLength, first, diff);
   const answerIndex = randomize(0, progLength - 1);
-  const rightAnswer = prog[answerIndex];
+  const rightAnswer = String(prog[answerIndex]);
   prog[answerIndex] = '..';
   const answer = String(QandA(prog.join(' ')));
   resultOutput(answer, rightAnswer);
